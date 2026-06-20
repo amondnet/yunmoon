@@ -1,0 +1,21 @@
+skills/yunmoon/SKILL.md
+  s_3be06c0ae023fe::t_a1cfc93c880c17 3
+skills/yunmoon-detect/SKILL.md
+  s_3be06c0ae023fe::t_9c4c2f90c2ab8b 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "5c922ba924bac81fa70f94ed9fdd4d9b1dd21944",
+  "prompts": {},
+  "sessions": {
+    "s_3be06c0ae023fe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "acdd314e-adff-49ad-aaea-d592f2dcd89f",
+        "model": "unknown"
+      },
+      "human_author": "Minsu Lee <amond@amond.net>"
+    }
+  }
+}
