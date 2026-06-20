@@ -1,0 +1,51 @@
+.gitignore
+  s_3be06c0ae023fe::t_ea098d7a87b57c 1-2
+  s_3be06c0ae023fe::t_c2f87352008ba4 3
+  s_3be06c0ae023fe::t_3a53140399aac5 4-17
+skills/yunmoon/references/rewriting-guide.md
+  s_3be06c0ae023fe::t_5c81222ffeac7e 1-75
+.claude-plugin/marketplace.json
+  s_3be06c0ae023fe::t_781321702da374 1-7,9-15,17-21
+  s_3be06c0ae023fe::t_f6d5fdda5c64ec 16
+  s_3be06c0ae023fe::t_1ec43a22979083 8
+README.md
+  s_3be06c0ae023fe::t_76ecab5bc899ad 32,34-35,49-59,61-62,64-65
+  s_3be06c0ae023fe::t_72be705fb15812 109-113
+  s_3be06c0ae023fe::t_4ab3f571c7ed1f 3,6,8-11,13-14
+  s_3be06c0ae023fe::t_f8992eecfa5028 1-2,4-5,7,12,15-31,33,36-48,60,63,66-91,101-108,114-120
+  s_3be06c0ae023fe::t_9b1863d44746b6 92-100
+skills/yunmoon/references/ai-tell-taxonomy.md
+  s_3be06c0ae023fe::t_2f3a19fc1fb2a3 1-96,101-179,183-215
+  s_3be06c0ae023fe::t_fdb95887d1fea0 97-100
+  s_3be06c0ae023fe::t_ddb76ba6942f9f 180-182
+skills/yunmoon/SKILL.md
+  s_3be06c0ae023fe::t_e5f3bef9df0659 1-14,16-88
+  s_3be06c0ae023fe::t_c19b8d1f2311a2 15
+skills/yunmoon/references/examples.md
+  s_3be06c0ae023fe::t_d0f662fcdbe737 1-83
+skills/yunmoon/references/katfishnet-research.md
+  s_3be06c0ae023fe::t_6ca37e7b5ca423 1-54
+.claude-plugin/plugin.json
+  s_3be06c0ae023fe::t_a940641a01446d 4
+  s_3be06c0ae023fe::t_4e427f4ca4d289 1-3,5-15
+LICENSE
+  s_3be06c0ae023fe::t_b940322fca7d45 1-21
+skills/yunmoon-detect/SKILL.md
+  s_3be06c0ae023fe::t_359fa3bf27af82 1-74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "1e6a1ad58cc0346efebd901c0ea50043e54c008b",
+  "prompts": {},
+  "sessions": {
+    "s_3be06c0ae023fe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "acdd314e-adff-49ad-aaea-d592f2dcd89f",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Minsu Lee <amond@amond.net>"
+    }
+  }
+}
