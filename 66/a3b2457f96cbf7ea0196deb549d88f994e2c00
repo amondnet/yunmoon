@@ -1,0 +1,40 @@
+eslint.config.mjs
+  s_3be06c0ae023fe::t_83dedefbee2c4f 1,3-9,14-24
+  s_3be06c0ae023fe::t_9a598693115149 2
+  s_3be06c0ae023fe::t_b91fe9faeef4e6 10-13
+README.md
+  s_3be06c0ae023fe::t_9a598693115149 69-80
+.gitignore
+  s_3be06c0ae023fe::t_49b690f3c2233f 4-8
+skills/yunmoon-detect/references/lread-rubric.md
+  s_3be06c0ae023fe::t_9a598693115149 28,34-35,39-40,49-57
+skills/yunmoon/references/rewriting-guide.md
+  s_3be06c0ae023fe::t_9a598693115149 18-21,67-69,71-72
+package.json
+  s_3be06c0ae023fe::t_a3491602b6238b 1-6,8-22
+  s_3be06c0ae023fe::t_9a598693115149 7
+skills/yunmoon/references/translationese-research.md
+  s_3be06c0ae023fe::t_9a598693115149 19,29-30,39-40,49-50,59-60,69-70,80-81,89-90,100,114-115,125-126,131,139,153-154,161,165,171,184-185,194,203,210,218,226,233,243,260,268,277,293,312-321,331,337
+docs/research.md
+  s_3be06c0ae023fe::t_9a598693115149 12,17,31-37,45-54,62-71,91-100,104-109,115-122,136,142,147,156
+skills/yunmoon/references/ai-tell-taxonomy.md
+  s_3be06c0ae023fe::t_9a598693115149 8-12,36-45,60-65,80-87,98-103,118-124,135-141,154-159,169-174,185-189,203-207
+skills/yunmoon/references/katfishnet-research.md
+  s_3be06c0ae023fe::t_9a598693115149 11,22,30,36,46-47,49-50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "66a3b2457f96cbf7ea0196deb549d88f994e2c00",
+  "prompts": {},
+  "sessions": {
+    "s_3be06c0ae023fe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "acdd314e-adff-49ad-aaea-d592f2dcd89f",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Minsu Lee <amond@amond.net>"
+    }
+  }
+}
