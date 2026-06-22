@@ -159,7 +159,7 @@
 ### taxonomy 보강 여지 (현재 gap)
 
 - **명사화·관형절 중첩** — 1차 문헌 **확보(2026-06)**: 명사화는 정려란(2018)·소지영·주세형(2017)의 문법적 은유·SFL 연구, 관형절 중첩은 김혜영(2011)·성승은(2011)으로 직접 근거 마련(§4 "추가 검증 1차 문헌" 표). 단 **경동사 분리('활용을 하다' vs '활용하다')를 번역투/AI 티로 규정한 학술 1차 문헌은 미확보** — 국립국어원 규범 가이드(§5)의 처방으로만 근거(추가 조사 대상).
-- detect 스킬: **LREAD 루브릭**(내용·조직·표현 3대 차원 + fluency trap)을 [`skills/yunmoon-detect/references/lread-rubric.md`](../skills/yunmoon-detect/references/lread-rubric.md)로 **반영 완료**. XDAC의 **단문/SNS 신호** 축은 **검증 완료(2026-06)** — XDAC(ACL `2025.acl-long.1108`) 본문 대조로 신호(반복문자·줄바꿈·이중공백 _부재_ 등)·수치 확정, [`xdac-research.md`](../skills/yunmoon-detect/references/xdac-research.md)에 정리. **조건부 권고**(단문 장르 게이트 + 다축 합산, "이모지=사람" 단정 금지, 카테고리 8과 신호 방향 반대). 실제 detect 스킬 반영은 사용자 결정 대기.
+- detect 스킬: **LREAD 루브릭**(내용·조직·표현 3대 차원 + fluency trap)을 [`skills/yunmoon-detect/references/lread-rubric.md`](../skills/yunmoon-detect/references/lread-rubric.md)로 **반영 완료**. XDAC의 **단문/SNS 신호** 축은 **검증 완료(2026-06)** — XDAC(ACL `2025.acl-long.1108`) 본문 대조로 신호(반복문자·줄바꿈·이중공백 _부재_ 등)·수치 확정, [`xdac-research.md`](../skills/yunmoon-detect/references/xdac-research.md)에 정리. **detect 스킬 반영 완료** — Phase 0 단문/SNS 게이트 + 조건부 Phase 1-S(단문 장르 게이트 + 다축 합산, "이모지=사람" 단정 금지, 카테고리 8과 신호 방향 반대 처리)로 통합.
 
 ### 미확인 (인용 전 추가 검증 필요)
 
