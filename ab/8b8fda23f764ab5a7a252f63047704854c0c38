@@ -1,0 +1,23 @@
+skills/yunmoon-detect/references/lread-rubric.md
+  s_3be06c0ae023fe::t_cad048fad03e73 11-13
+docs/research.md
+  s_3be06c0ae023fe::t_2dfd02155bb418 31-34,36-37
+  s_3be06c0ae023fe::t_d89ccae585b569 35
+  s_3be06c0ae023fe::t_d46809f185645f 150
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "ab8b8fda23f764ab5a7a252f63047704854c0c38",
+  "prompts": {},
+  "sessions": {
+    "s_3be06c0ae023fe": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "acdd314e-adff-49ad-aaea-d592f2dcd89f",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Minsu Lee <amond@amond.net>"
+    }
+  }
+}
