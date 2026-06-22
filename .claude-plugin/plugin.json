@@ -1,7 +1,7 @@
 {
   "name": "yunmoon",
   "version": "0.1.0",
-  "description": "한글 AI 글 윤문·탐지 도구 — AI가 쓴 한글 텍스트를 사람이 쓴 글처럼 윤문하거나(yunmoon), AI가 썼는지 판별(yunmoon-detect)한다. 번역투·상투어·쉼표 과용 등 10대 AI 티 패턴 기반. 윤문 시 내용은 보존하고 문체·리듬만 다듬는다.",
+  "description": "한글 AI 글 윤문·탐지 도구 — AI가 쓴 한글 텍스트를 사람이 쓴 글처럼 윤문하거나(yunmoon), AI가 썼는지 판별(detect)한다. 번역투·상투어·쉼표 과용 등 10대 AI 티 패턴 기반. 윤문 시 내용은 보존하고 문체·리듬만 다듬는다.",
   "author": {
     "name": "Minsu Lee",
     "email": "minsu.lee@dietfriends.kr",

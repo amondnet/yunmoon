@@ -1,6 +1,6 @@
 # 학술 근거 — XDAC (단문/SNS·댓글 AI 탐지, ACL 2025)
 
-`yunmoon-detect`는 문어체(KatFishNet)·사람 판별 루브릭(LREAD) 중심이다. **단문·구어체(SNS·댓글·채팅)** 는 신호
+`detect`는 문어체(KatFishNet)·사람 판별 루브릭(LREAD) 중심이다. **단문·구어체(SNS·댓글·채팅)** 는 신호
 방향이 달라, 한국어 댓글 AI 탐지 연구 **XDAC**로 별도 보강한다. 이 문서는 XDAC 본문 검증 결과와 단문 신호,
 그리고 detect 스킬에 'SNS/댓글 톤' 축을 더할 때의 조건을 정리한다.
 

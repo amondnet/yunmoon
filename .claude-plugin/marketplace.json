@@ -13,7 +13,7 @@
     {
       "name": "yunmoon",
       "source": "./",
-      "description": "한글 AI 글 윤문(yunmoon)·탐지(yunmoon-detect) 스킬 묶음. 10대 AI 티 분류 + KatFishNet(ACL 2025) 근거.",
+      "description": "한글 AI 글 윤문(yunmoon)·탐지(detect) 스킬 묶음. 10대 AI 티 분류 + KatFishNet(ACL 2025) 근거.",
       "version": "0.1.0",
       "keywords": ["korean", "humanize", "ai-detector", "윤문", "번역투"]
     }

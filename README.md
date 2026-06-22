@@ -6,7 +6,7 @@ ChatGPT·Claude·Gemini가 쓴 한국어 글에는 번역투, 피동 남용, 상
 "AI 티"가 묻어난다. 이 플러그인은 두 가지 스킬을 묶는다:
 
 - **`yunmoon`** (윤문) — 글의 **내용은 그대로 둔 채** 문체·리듬·표현만 자연스럽게 고쳐 사람이 쓴 듯한 한국어로 만든다.
-- **`yunmoon-detect`** (탐지) — 글을 고치지 않고, **AI가 썼는지**를 신호 기반으로 진단해 'AI 가능성·신뢰도·근거'를 보고한다.
+- **`detect`** (탐지) — 글을 고치지 않고, **AI가 썼는지**를 신호 기반으로 진단해 'AI 가능성·신뢰도·근거'를 보고한다.
 
 - ✅ **내용 보존** — 윤문 시 고유명사·수치·인용·날짜·주장은 한 글자도 바꾸지 않는다
 - ✅ **10대 AI 티 분류** — 번역투부터 리듬 균일성까지 체계적으로 탐지·교정
@@ -51,7 +51,7 @@ ChatGPT·Claude·Gemini가 쓴 한국어 글에는 번역투, 피동 남용, 상
 **출력**: ① 한 줄 상태 `완료. 변경률 X% / 등급 Y / 자체검증 N/6 통과` ② 윤문본
 ③ 카테고리별 탐지 before/after 표 ④ 주요 변경 하이라이트 3~5건.
 
-### 탐지 (yunmoon-detect) — AI 작성 여부 진단
+### 탐지 (detect) — AI 작성 여부 진단
 
 ```text
 이거 AI가 쓴 글이야? 판별해줘:
@@ -101,7 +101,7 @@ yunmoon/
 │   │       ├── examples.md               # 장르별 before/after
 │   │       ├── katfishnet-research.md    # 근거: 쉼표·POS 다양성 (KatFishNet, ACL 2025)
 │   │       └── translationese-research.md # 근거: 번역투·보편소·post-editese
-│   └── yunmoon-detect/      # 탐지(AI 작성 여부 진단) 스킬
+│   └── detect/      # 탐지(AI 작성 여부 진단) 스킬
 │       ├── SKILL.md         # 신호 스캔 → AI 가능성·신뢰도·근거 (taxonomy 공유)
 │       └── references/
 │           ├── lread-rubric.md  # 근거: 사람 판별 루브릭·fluency trap (LREAD, 2026)
@@ -119,7 +119,7 @@ yunmoon/
 
 AI 티 탐지·교정 기준은 한국어 LLM 텍스트 탐지 연구 **KatFishNet** (Park et al., ACL 2025,
 [논문](https://aclanthology.org/2025.acl-long.1030/) · [코드](https://github.com/Shinwoo-Park/katfishnet))과
-한국 번역학·번역 보편소·post-editese 연구로 뒷받침된다. 탐지(yunmoon-detect) 스킬은 더해 사람의
+한국 번역학·번역 보편소·post-editese 연구로 뒷받침된다. 탐지(detect) 스킬은 더해 사람의
 AI 판별 루브릭 **LREAD**([arXiv 2601.19913](https://arxiv.org/abs/2601.19913), 2026)와 단문/SNS·댓글 탐지
 연구 **XDAC**([ACL 2025](https://aclanthology.org/2025.acl-long.1108/))로 보강된다. 카테고리별 매핑은
 [`katfishnet-research.md`](skills/yunmoon/references/katfishnet-research.md) ·
