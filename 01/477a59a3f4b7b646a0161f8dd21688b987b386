@@ -1,0 +1,40 @@
+skills/humanize/SKILL.md
+  s_6300175b0a787a::t_2390522eb4a9d0 30
+  s_6300175b0a787a::t_c9b0fb9e46b063 6
+  s_6300175b0a787a::t_2451b81aca8bd2 2
+README.md
+  s_6300175b0a787a::t_d20eb08f0fddce 96
+  s_6300175b0a787a::t_bdb2b87d4ed752 8
+  s_6300175b0a787a::t_1f3492ea265748 86,125-126
+  s_6300175b0a787a::t_9b143ecd876f1e 35
+.claude-plugin/marketplace.json
+  s_6300175b0a787a::t_cf1b8ee29def84 16
+docs/research.md
+  s_6300175b0a787a::t_1f3492ea265748 13-14,77
+skills/humanize/references/ai-tell-taxonomy.md
+  s_6300175b0a787a::t_13370a38dd4c6e 1
+skills/detect/SKILL.md
+  s_6300175b0a787a::t_01b3a4f66bfedb 142
+  s_6300175b0a787a::t_33c9243b2f574d 3
+  s_6300175b0a787a::t_bb729eaa96c869 125
+  s_6300175b0a787a::t_ca4f04521c4dfb 17-18
+  s_6300175b0a787a::t_6d05a9eeb634f2 9
+.claude-plugin/plugin.json
+  s_6300175b0a787a::t_d3203ca5ad36d6 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.10",
+  "base_commit_sha": "01477a59a3f4b7b646a0161f8dd21688b987b386",
+  "prompts": {},
+  "sessions": {
+    "s_6300175b0a787a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "33a757b5-be3d-4c62-a9a5-720092ebe5a5",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Minsu Lee <amond@amond.net>"
+    }
+  }
+}
