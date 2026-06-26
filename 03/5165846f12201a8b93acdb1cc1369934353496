@@ -1,0 +1,23 @@
+skills/proofread/references/proofreading-rules.md
+  s_a78f577ae5495a::t_7bbc96b927fef6 9-16,22-33,40-48,56-57,59,63-68,86-88,90-93
+  s_a78f577ae5495a::t_e9db89985f8908 1-8,17-21,34-39,49-55,58,60-62,69-85,89,94-104
+skills/proofread/SKILL.md
+  s_a78f577ae5495a::t_7bbc96b927fef6 13,64-68
+  s_a78f577ae5495a::t_60a5e1f79699a4 1-12,14-63,69-92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "035165846f12201a8b93acdb1cc1369934353496",
+  "prompts": {},
+  "sessions": {
+    "s_a78f577ae5495a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "03e0c78d-9adb-473d-a136-153af786617a",
+        "model": "unknown"
+      },
+      "human_author": "Minsu Lee <amond@amond.net>"
+    }
+  }
+}
