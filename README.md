@@ -1,16 +1,24 @@
 # 윤문 (yoonmoon)
 
-> 한글 AI 글을 **사람처럼 윤문**하고, **AI가 썼는지 판별**하는 Claude Code 스킬/플러그인
+> 한글 글을 **사람처럼 윤문**하고, **번역투를 교정**하고, **맞춤법을 바로잡고**, **문체를 변환**하고,
+> **AI가 썼는지 판별**하는 Claude Code 스킬/플러그인
 
 ChatGPT·Claude·Gemini가 쓴 한국어 글에는 번역투, 피동 남용, 상투적 표현, 불릿·이모지 과다 같은
-"AI 티"가 묻어난다. 이 플러그인은 두 가지 스킬을 묶는다:
+"AI 티"가 묻어난다. 번역된 글에는 번역체가, 모든 글에는 맞춤법·문체 문제가 따라온다. 이 플러그인은
+한글 글다듬기를 목적별로 나눈 다섯 스킬을 묶는다:
 
-- **`humanize`** (윤문) — 글의 **내용은 그대로 둔 채** 문체·리듬·표현만 자연스럽게 고쳐 사람이 쓴 듯한 한국어로 만든다.
-- **`detect`** (탐지) — 글을 고치지 않고, **AI가 썼는지**를 신호 기반으로 진단해 'AI 가능성·신뢰도·근거'를 보고한다.
+| 스킬                   | 한 일        | 정체성 (트리거 경계)                                        |
+| ---------------------- | ------------ | ----------------------------------------------------------- |
+| **`humanize`**         | AI 글 윤문   | *AI가 쓴 글*의 AI 티 제거 (문체 유지)                       |
+| **`translate-polish`** | 번역투 교정  | _번역된 글_(번역서·MT·MTPE)의 번역체 교정 (재번역 아님)     |
+| **`proofread`**        | 교정·교열    | 맞춤법·띄어쓰기·문법·비문 등 *객관적 오류*만 (뜻·문체 불변) |
+| **`restyle`**          | 문체·톤 변환 | 격식·매체에 맞춰 register _의도적 변경_                     |
+| **`detect`**           | AI 작성 판별 | 고치지 않고 *AI 가능성·신뢰도·근거*만 진단                  |
 
-- ✅ **내용 보존** — 윤문 시 고유명사·수치·인용·날짜·주장은 한 글자도 바꾸지 않는다
-- ✅ **10대 AI 티 분류** — 번역투부터 리듬 균일성까지 체계적으로 탐지·교정
-- ✅ **학술 근거** — KatFishNet·LREAD·XDAC 등 한국어 AI 텍스트 탐지 연구(ACL 2025·2026)로 뒷받침
+- ✅ **내용 보존** — 윤문·교정·변환 모두 고유명사·수치·인용·날짜·주장은 한 글자도 바꾸지 않는다
+- ✅ **목적별 분리** — 윤문(AI/번역) · 교정(규범) · 변환(문체) · 판별을 섞지 않고 또렷이 나눈다
+- ✅ **10대 AI 티 분류 + 8대 번역투 유형** — 체계적 탐지·교정, 규정 근거와 함께 내역 제시
+- ✅ **학술 근거** — KatFishNet·LREAD·XDAC, 한국 번역학·번역 보편소(Baker·Toury·Toral) 연구로 뒷받침
 - ✅ **단문·SNS·댓글까지** — 문어체뿐 아니라 짧은 구어체 글도 별도 신호축(XDAC)으로 판별
 - ✅ **가벼운 단일 흐름** — 별도 에이전트 스폰 없이 빠르게. 장르·강도 조절 가능
 
@@ -68,6 +76,49 @@ ChatGPT·Claude·Gemini가 쓴 한국어 글에는 번역투, 피동 남용, 상
 > ⚠️ 탐지는 **확률적 추정**이다. 표절·부정행위 등 불이익 판정의 단독 근거로 쓰지 말 것.
 > 사람이 써도 번역투·쉼표 습관이 있어 위양성이 날 수 있다.
 
+### 번역 윤문 (translate-polish) — 번역투 다듬기
+
+번역서·자막·논문, 또는 구글번역·DeepL·파파고 등 **기계번역 결과**의 번역체를 자연스럽게 고친다.
+"AI가 썼는지"와 무관하게 *번역된 글*이 대상이다.
+
+```text
+이 번역문 번역투 좀 다듬어줘 (원문도 같이 줄게):
+
+이 연구는 우리가 그 문제를 이해하는 것을 가능하게 한다. 그것들은
+여러 방법들을 통해 분석되어진다.
+```
+
+원문(원천 텍스트)을 같이 주면 명시화·간섭을 대조한다. 옵션: `강도: 보수|기본|적극`.
+**재번역이 아니다** — 오역 의심은 고치지 않고 표시만 한다.
+
+### 교정·교열 (proofread) — 맞춤법·문법 바로잡기
+
+문체는 그대로 두고 **맞춤법·띄어쓰기·표준어·외래어 표기·문장부호·비문** 등 객관적 오류만 고친다.
+각 교정은 규정 근거와 함께 내역으로 보여준다.
+
+```text
+맞춤법 좀 봐줘:
+
+오늘 회의가 잘 됬다. 할수있는 일을 일일히 점검했고 메세지도 보냈다.
+```
+
+**출력**: ① 교정 건수(분류별) ② 교정본 ③ `원문 → 교정 + 근거` 내역 표 ④ 확인 요망 항목.
+규범으로 분류되지 않는 어색함은 손대지 않는다(그건 윤문 영역).
+
+### 문체·톤 변환 (restyle) — 격식·매체 맞춤
+
+내용은 그대로 두고 **문체·격식·톤만** 목표에 맞게 바꾼다. humanize가 문체를 *유지*한다면 restyle은
+문체를 _의도적으로 바꾼다_.
+
+```text
+이 글 비즈니스 이메일 톤(하십시오체)으로 바꿔줘:
+
+야 그거 언제까지 줄 수 있어? 빨리 좀 해줘.
+```
+
+종결체(하십시오체/해요체/한다체/반말)·매체(보도자료·이메일·CS·마케팅·SNS·학술 등)를 지정한다.
+종결 통일·높임 정합·어휘 격식·호칭까지 함께 조정한다.
+
 ## 10대 AI 티 카테고리
 
 | #   | 카테고리            | 대표 패턴                                          |
@@ -93,15 +144,28 @@ yoonmoon/
 │   ├── plugin.json          # 플러그인 매니페스트
 │   └── marketplace.json     # 마켓플레이스 등록
 ├── skills/
-│   ├── humanize/            # 윤문(고쳐쓰기) 스킬
+│   ├── humanize/            # AI 글 윤문(고쳐쓰기) 스킬
 │   │   ├── SKILL.md         # 오케스트레이터 (탐지·윤문·검증)
 │   │   └── references/
-│   │       ├── ai-tell-taxonomy.md       # 10대 카테고리 분류 (두 스킬 공유)
-│   │       ├── rewriting-guide.md        # 윤문 원칙·순서·자체검증
-│   │       ├── examples.md               # 장르별 before/after
-│   │       ├── katfishnet-research.md    # 근거: 쉼표·POS 다양성 (KatFishNet, ACL 2025)
-│   │       └── translationese-research.md # 근거: 번역투·보편소·post-editese
-│   └── detect/      # 탐지(AI 작성 여부 진단) 스킬
+│   │       ├── ai-tell-taxonomy.md    # 10대 AI 티 분류 (humanize·detect 공유)
+│   │       ├── rewriting-guide.md     # 윤문 원칙·순서·자체검증
+│   │       ├── examples.md            # 장르별 before/after
+│   │       └── katfishnet-research.md # 근거: 쉼표·POS 다양성 (KatFishNet, ACL 2025)
+│   ├── translate-polish/    # 번역투 교정(번역 윤문) 스킬
+│   │   ├── SKILL.md         # 번역투 탐지·교정·검증
+│   │   └── references/
+│   │       ├── translationese-taxonomy.md  # 8대 번역투 유형 분류
+│   │       ├── polish-guide.md             # 교정 원칙·순서·원문 활용
+│   │       └── translationese-research.md  # 근거: 번역 보편소·post-editese (humanize 공유)
+│   ├── proofread/           # 교정·교열(맞춤법·문법) 스킬
+│   │   ├── SKILL.md         # 규범 오류 탐지·교정·검증
+│   │   └── references/
+│   │       └── proofreading-rules.md  # 맞춤법·띄어쓰기·표준어·외래어·부호·비문 규정
+│   ├── restyle/             # 문체·톤 변환 스킬
+│   │   ├── SKILL.md         # 현재 문체 파악·변환·검증
+│   │   └── references/
+│   │       └── register-guide.md      # 상대높임 체계·문어/구어·매체별 톤
+│   └── detect/              # 탐지(AI 작성 여부 진단) 스킬
 │       ├── SKILL.md         # 신호 스캔 → AI 가능성·신뢰도·근거 (taxonomy 공유)
 │       └── references/
 │           ├── lread-rubric.md  # 근거: 사람 판별 루브릭·fluency trap (LREAD, 2026)
@@ -123,7 +187,7 @@ AI 티 탐지·교정 기준은 한국어 LLM 텍스트 탐지 연구 **KatFishN
 AI 판별 루브릭 **LREAD**([arXiv 2601.19913](https://arxiv.org/abs/2601.19913), 2026)와 단문/SNS·댓글 탐지
 연구 **XDAC**([ACL 2025](https://aclanthology.org/2025.acl-long.1108/))로 보강된다. 카테고리별 매핑은
 [`katfishnet-research.md`](skills/humanize/references/katfishnet-research.md) ·
-[`translationese-research.md`](skills/humanize/references/translationese-research.md)에 있고,
+[`translationese-research.md`](skills/translate-polish/references/translationese-research.md)에 있고,
 탐지·스타일로메트리·규범·선행 도구를 아우르는 **연구·참고 자료 전체 모음**은
 [`docs/research.md`](docs/research.md)에 정리했다.
 

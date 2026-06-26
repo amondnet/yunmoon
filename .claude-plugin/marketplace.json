@@ -5,7 +5,7 @@
     "url": "https://github.com/amondnet"
   },
   "metadata": {
-    "description": "한글 AI 글을 사람처럼 윤문하고 AI 작성 여부를 판별하는 yoonmoon 스킬 마켓플레이스",
+    "description": "한글 글을 윤문·교정·변환하고 AI 작성 여부를 판별하는 yoonmoon 스킬 마켓플레이스",
     "version": "0.1.0",
     "pluginRoot": "."
   },
@@ -13,9 +13,19 @@
     {
       "name": "yoonmoon",
       "source": "./",
-      "description": "한글 AI 글 윤문(humanize)·탐지(detect) 스킬 묶음. 10대 AI 티 분류 + KatFishNet(ACL 2025) 근거.",
+      "description": "한글 글다듬기 스킬 묶음 — 윤문(humanize)·탐지(detect)·번역투 교정(translate-polish)·맞춤법 교정(proofread)·문체 변환(restyle). 10대 AI 티 분류 + 한국 번역학·KatFishNet(ACL 2025) 근거.",
       "version": "0.1.0",
-      "keywords": ["korean", "humanize", "ai-detector", "윤문", "번역투"]
+      "keywords": [
+        "korean",
+        "humanize",
+        "ai-detector",
+        "translationese",
+        "proofreading",
+        "윤문",
+        "번역투",
+        "맞춤법",
+        "문체변환"
+      ]
     }
   ]
 }
