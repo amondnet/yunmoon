@@ -1,0 +1,22 @@
+skills/proofread/references/proofreading-rules.md
+  s_a78f577ae5495a::t_9c22cdb75aaf6a 54-59,86-91,93
+  s_a78f577ae5495a::t_364a7f10cf1bee 92
+README.md
+  s_a78f577ae5495a::t_d41c321916705e 41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "940431f65d90e499e08c2dc27fbedb82575a6a4c",
+  "prompts": {},
+  "sessions": {
+    "s_a78f577ae5495a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "03e0c78d-9adb-473d-a136-153af786617a",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Minsu Lee <amond@amond.net>"
+    }
+  }
+}
