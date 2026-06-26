@@ -1,0 +1,30 @@
+.claude-plugin/marketplace.json
+  s_a78f577ae5495a::t_b359df87ba1f45 16
+  s_a78f577ae5495a::t_2bfcd399e37165 8
+  s_a78f577ae5495a::t_7bbc96b927fef6 18-28
+.claude-plugin/plugin.json
+  s_a78f577ae5495a::t_7bbc96b927fef6 13-24
+  s_a78f577ae5495a::t_21947ddc548163 4
+README.md
+  s_a78f577ae5495a::t_d570b3f4651cdd 3-4,7-8,18-21
+  s_a78f577ae5495a::t_7bbc96b927fef6 10-16,111
+  s_a78f577ae5495a::t_a833950cbf333c 190
+  s_a78f577ae5495a::t_eb3e4c182a1d30 147,150-168
+  s_a78f577ae5495a::t_212d5d5faaac74 9,17,79-110,112-121
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "388134b6892e6d914fd8527c45eea58a625c8690",
+  "prompts": {},
+  "sessions": {
+    "s_a78f577ae5495a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "03e0c78d-9adb-473d-a136-153af786617a",
+        "model": "unknown"
+      },
+      "human_author": "Minsu Lee <amond@amond.net>"
+    }
+  }
+}
