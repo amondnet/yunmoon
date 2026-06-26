@@ -1,7 +1,7 @@
 {
   "name": "yoonmoon",
   "version": "0.1.0",
-  "description": "한글 AI 글 윤문·탐지 도구 — AI가 쓴 한글 텍스트를 사람이 쓴 글처럼 윤문하거나(humanize), AI가 썼는지 판별(detect)한다. 번역투·상투어·쉼표 과용 등 10대 AI 티 패턴 기반. 윤문 시 내용은 보존하고 문체·리듬만 다듬는다.",
+  "description": "한글 글다듬기·탐지 도구 모음 — AI 글 윤문(humanize), AI 작성 판별(detect), 번역투 교정(translate-polish), 맞춤법·문법 교정(proofread), 문체·톤 변환(restyle). 내용은 보존하고 문체·리듬만 다듬으며, 10대 AI 티 분류와 한국 번역학·KatFishNet(ACL 2025) 근거를 공유한다.",
   "author": {
     "name": "Minsu Lee",
     "email": "minsu.lee@dietfriends.kr",
@@ -10,6 +10,17 @@
   "homepage": "https://github.com/amondnet/yoonmoon",
   "repository": "https://github.com/amondnet/yoonmoon",
   "license": "MIT",
-  "keywords": ["korean", "humanize", "ai-detector", "translationese", "윤문", "번역투"],
+  "keywords": [
+    "korean",
+    "humanize",
+    "ai-detector",
+    "translationese",
+    "proofreading",
+    "tone",
+    "윤문",
+    "번역투",
+    "맞춤법",
+    "문체변환"
+  ],
   "skills": ["./skills/"]
 }

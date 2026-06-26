@@ -11,7 +11,7 @@
 > **스킬에 직접 반영된 근거 문서**(이 모음의 부분집합이자 taxonomy가 인용):
 >
 > - [`skills/humanize/references/katfishnet-research.md`](../skills/humanize/references/katfishnet-research.md) — 쉼표·POS 다양성 (카테고리 4·9)
-> - [`skills/humanize/references/translationese-research.md`](../skills/humanize/references/translationese-research.md) — 번역투·보편소·post-editese (카테고리 1·2·6)
+> - [`skills/translate-polish/references/translationese-research.md`](../skills/translate-polish/references/translationese-research.md) — 번역투·보편소·post-editese (translate-polish 본거지, humanize 카테고리 1·2·6 공유)
 
 ## 목차
 
@@ -74,7 +74,7 @@
 
 ## 4. 번역투·번역 보편소·post-editese
 
-상세 정리·서지는 스킬 레퍼런스 [`translationese-research.md`](../skills/humanize/references/translationese-research.md) 참조.
+상세 정리·서지는 스킬 레퍼런스 [`translationese-research.md`](../skills/translate-polish/references/translationese-research.md) 참조.
 핵심만:
 
 - **한국어 번역투 유형론** — 김정우(2007, 정전), 김도훈(2009, 직역 대명사·무생물 '-들'·무생물 주어), 이영옥(2001)/최서영(2022, 무생물 주어+타동사), 오경순(2010)/최유숙(2023, 피동·이중피동), 전영철(2015, '-들' 의미론), 국립국어원 『새국어생활』 2012 번역 특집.
