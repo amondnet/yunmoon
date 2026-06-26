@@ -1,0 +1,23 @@
+skills/restyle/SKILL.md
+  s_a78f577ae5495a::t_698b0ea2ca43b9 1-61,67-93
+  s_a78f577ae5495a::t_7bbc96b927fef6 62-66
+skills/restyle/references/register-guide.md
+  s_a78f577ae5495a::t_7bbc96b927fef6 4,11-17,19-20,24-31
+  s_a78f577ae5495a::t_d91d1dd5aa5323 1-3,5-10,18,21-23,32-67
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "cd0abe9bc41ab711dc20588db8cd75c931adeab4",
+  "prompts": {},
+  "sessions": {
+    "s_a78f577ae5495a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "03e0c78d-9adb-473d-a136-153af786617a",
+        "model": "unknown"
+      },
+      "human_author": "Minsu Lee <amond@amond.net>"
+    }
+  }
+}
