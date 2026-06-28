@@ -1,0 +1,48 @@
+skills/proofread/SKILL.md
+  s_b8be00e531b294::t_c2764685d6abc0 47-48
+  s_b8be00e531b294::t_562b27c4f354fa 20
+  s_b8be00e531b294::t_4e833561d60de4 30-33
+skills/restyle/SKILL.md
+  s_b8be00e531b294::t_77fe7a58ebd032 45
+  s_b8be00e531b294::t_aec0082f58962b 17
+  s_b8be00e531b294::t_f452169d1cddb3 28-31
+skills/detect/SKILL.md
+  s_b8be00e531b294::t_8dae0bc973b290 30-33
+  s_b8be00e531b294::t_1fa55819970ee1 16
+skills/polish-all/SKILL.md
+  s_b8be00e531b294::t_88c5b28f885a9d 35-38
+README.md
+  s_b8be00e531b294::t_a3a4cfe6bcefec 200
+  s_b8be00e531b294::t_cb714980bc00d7 213
+  s_b8be00e531b294::t_a8fde02436972c 140-178
+skills/humanize/SKILL.md
+  s_b8be00e531b294::t_ee9a02749ab3bf 58
+  s_b8be00e531b294::t_d949393e507b2c 50-51
+  s_b8be00e531b294::t_fbf123a6a6e880 17
+  s_b8be00e531b294::t_8a7b22b30a3c2e 31-34
+skills/translate-polish/SKILL.md
+  s_b8be00e531b294::t_551ad962a4db28 62
+  s_b8be00e531b294::t_5b381798fcd885 34-37
+  s_b8be00e531b294::t_02240bc3a19858 54-55
+  s_b8be00e531b294::t_0fedf26b840ade 20
+.yoonmoon.example.md
+  s_b8be00e531b294::t_5e81f677f780fb 1-51
+skills/humanize/references/project-config.md
+  s_b8be00e531b294::t_e7f9a809bfead0 1-121
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "44a59953ca6750f59b4e5fb1fec0d2e8ea39a7db",
+  "prompts": {},
+  "sessions": {
+    "s_b8be00e531b294": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "488aae08-8152-434a-93d6-a2feb42c7f52",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Minsu Lee <amond@amond.net>"
+    }
+  }
+}
