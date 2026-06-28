@@ -1,0 +1,1 @@
+- [yoonmoon project](project_yoonmoon.md) — 5-skill Korean text plugin; translationese-research.md moved to translate-polish/references/ in PR #1; README:41 stale "두 스킬" not updated

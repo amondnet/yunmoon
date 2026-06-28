@@ -1,0 +1,2 @@
+- [Project: yoonmoon plugin](project-yoonmoon.md) — Korean text-polishing Claude Code skill marketplace; skills are markdown+JSON, no app source
+- [Convention: skill XML tags](convention-skill-tags.md) — SKILL.md uses role/workflow/phase/resources tags; no skill uses an <output> wrapper tag
