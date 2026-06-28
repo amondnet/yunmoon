@@ -6,21 +6,24 @@ description: 한글 글 한 편을 진단부터 다듬기까지 전과정으로 
 # 윤문 풀코스(polish-all) — 진단부터 다듬기까지 전과정
 
 <role>
-한글 글 한 편을 **진단 → 교정 → 번역투 제거 → AI 티 제거 → 문체 변환 → 재진단**의 순서로 한 흐름에서
-처리하는 오케스트레이터다. 각 단계는 형제 스킬(detect·proofread·translate-polish·humanize·restyle)의
-reference를 그대로 재사용해 **이 컨텍스트 안에서 단계별로** 실행한다(별도 서브에이전트를 띄우지 않는다).
-의미는 보존하고(restyle만 register를 의도적으로 변경) 누적 결과와 단계별 before/after를 보고한다.
+한글 글 한 편을 **진단 → 교정 → 번역투 제거 → AI 티 제거 → 문체 변환 → 재진단**의 순서로 처리하는
+오케스트레이터다. 각 단계는 형제 스킬을 **이름(`plugin:skill`)으로 `Skill` 도구를 통해 호출**해 순차
+실행한다 — 형제 스킬의 내부 파일을 상대경로로 직접 참조하지 않는다(내부 구조 변경에 깨지지 않게).
+`Skill` 도구는 현재 대화에서 실행되므로 별도 서브에이전트를 띄우지 않는 단일 흐름이다. 앞 단계의
+출력이 다음 단계의 입력이 된다. 의미는 보존하고(restyle만 register를 의도적으로 변경) 누적 결과와
+단계별 before/after를 보고한다.
 </role>
 
 <resources>
-단계마다 해당 reference를 읽어 기준으로 삼는다. 순서·라우팅·중복·통합검증은 pipeline-guide가 정의한다.
+순서·라우팅·중복·통합검증은 이 스킬 고유의 `pipeline-guide.md`가 정의한다. 각 단계는 아래 형제 스킬을
+`plugin:skill` 이름으로 호출한다(개별 규칙·reference는 각 스킬이 스스로 로드한다).
 
-- `references/pipeline-guide.md` — 단계 순서·근거, 라우팅 매트릭스, translate-polish↔humanize 중복 처리, 강도 전달, 통합 자체검증, 출력 형식. **전 단계의 상위 기준**.
-- `../detect/references/lread-rubric.md`, `../detect/references/xdac-research.md` — **Phase 1·6**(진단·재진단).
-- `../proofread/references/proofreading-rules.md` — **Phase 2**(교정·교열).
-- `../translate-polish/references/translationese-taxonomy.md`, `../translate-polish/references/polish-guide.md` — **Phase 3**(번역투).
-- `../humanize/references/ai-tell-taxonomy.md`, `../humanize/references/rewriting-guide.md` — **Phase 4**(AI 티). 진단에도 공유.
-- `../restyle/references/register-guide.md` — **Phase 5**(문체·톤 변환).
+- `references/pipeline-guide.md` — 단계 순서·근거, 라우팅 매트릭스, translate-polish↔humanize 중복 처리, 강도 전달, 통합 자체검증, 출력 형식. **전 단계의 상위 기준**(이 스킬 고유 파일).
+- `yoonmoon:detect` — **Phase 1·6**(진단·재진단).
+- `yoonmoon:proofread` — **Phase 2**(교정·교열).
+- `yoonmoon:translate-polish` — **Phase 3**(번역투 제거).
+- `yoonmoon:humanize` — **Phase 4**(AI 티 제거).
+- `yoonmoon:restyle` — **Phase 5**(문체·톤 변환).
   </resources>
 
 <workflow>
@@ -33,37 +36,38 @@ reference를 그대로 재사용해 **이 컨텍스트 안에서 단계별로** 
 </phase>
 
 <phase n="1" name="진단·라우팅 (detect)">
-`detect` 스킬 흐름으로 입력을 진단한다(`../humanize/references/ai-tell-taxonomy.md` 신호 + `lread-rubric.md`;
-단문·구어체면 `xdac-research.md`). **AI 글 여부·번역문 여부·장르**를 판정하고, `pipeline-guide.md`의
-**라우팅 매트릭스**로 켤 단계를 정한다(proofread 항상, restyle은 목표 지정 시). 판정과 켜진 단계를 기록한다.
+`yoonmoon:detect` 스킬을 호출해 입력을 진단한다. **AI 글 여부·번역문 여부·장르**를 판정하고,
+`pipeline-guide.md`의 **라우팅 매트릭스**로 켤 단계를 정한다(proofread 항상, restyle은 목표 지정 시).
+판정 결과와 켜진 단계를 기록한다.
 </phase>
 
 <phase n="2" name="교정·교열 (proofread)">
-`../proofread/references/proofreading-rules.md`로 맞춤법·띄어쓰기·표준어·외래어·문장부호·비문 등 **규범 오류만**
-고친다. 뜻·문체는 불변. 깨끗한 토대를 만들어 뒤 단계를 돕는다. (항상 실행)
+`yoonmoon:proofread` 스킬을 호출해 맞춤법·띄어쓰기·표준어·외래어·문장부호·비문 등 **규범 오류만** 고친다.
+뜻·문체는 불변. 깨끗한 토대를 만들어 뒤 단계를 돕는다. (항상 실행)
 </phase>
 
 <phase n="3" name="번역투 제거 (translate-polish) — 조건부">
-**번역문으로 판정됐을 때만.** `../translate-polish/references/translationese-taxonomy.md`·`polish-guide.md`로
-번역투 8유형을 교정한다. 원문이 있으면 명시화·간섭을 대조한다. 강도·장르를 전달한다. 재번역 금지.
+**번역문으로 판정됐을 때만.** `yoonmoon:translate-polish` 스킬을 호출해 번역투 8유형을 교정한다.
+원문이 있으면 명시화·간섭을 대조한다. 강도·장르를 전달한다. 재번역 금지.
 </phase>
 
 <phase n="4" name="AI 티 제거 (humanize) — 조건부">
-**AI 글로 판정됐을 때만.** `../humanize/references/ai-tell-taxonomy.md`·`rewriting-guide.md`로 AI 티를 다듬는다.
-3단계가 실행됐으면 **번역투(카테고리 1·2·6)는 제외하고 AI 고유 티(3·4·5·7·8·9·10)에 집중**한다
-(`pipeline-guide.md`의 중복 처리). 강도·장르를 전달한다.
+**AI 글로 판정됐을 때만.** `yoonmoon:humanize` 스킬을 호출해 AI 티를 다듬는다. 3단계가 실행됐으면
+**번역투(카테고리 1·2·6)는 제외하고 AI 고유 티(3·4·5·7·8·9·10)에 집중**한다(`pipeline-guide.md`의 중복 처리).
+강도·장르를 전달한다.
 </phase>
 
 <phase n="5" name="문체·톤 변환 (restyle) — 조건부">
-**목표 문체가 지정됐을 때만.** `../restyle/references/register-guide.md`로 종결체·격식·매체 톤을 목표에 맞게
-바꾼다. register를 의도적으로 바꾸는 유일한 단계 — 그래서 의미 보존 단계가 끝난 **맨 마지막**에 둔다.
+**목표 문체가 지정됐을 때만.** `yoonmoon:restyle` 스킬을 호출해 종결체·격식·매체 톤을 목표에 맞게 바꾼다.
+register를 의도적으로 바꾸는 유일한 단계 — 그래서 의미 보존 단계가 끝난 **맨 마지막**에 둔다.
 사실·주장·효력 문구는 보존.
 </phase>
 
 <phase n="6" name="재진단 (detect QA)">
-다듬은 결과를 `detect` 흐름으로 **재진단**해 AI 가능성·번역체 신호가 입력 대비 낮아졌는지 확인한다.
+다듬은 결과를 `yoonmoon:detect` 스킬로 **재진단**해 AI 가능성·번역체 신호가 입력 대비 낮아졌는지 확인한다.
 이어 `pipeline-guide.md`의 **통합 자체검증 6항**(사실 보존·의미 동등·단계 충돌·과교정 누적·일관성·재진단 개선)을
-수행한다. 위반 시 해당 단계로 돌아가 1회 부분 재작업.
+수행한다. 위반 시 해당 단계로 돌아가 **1회** 부분 재작업한다. 재작업 후에도 같은 항목이 통과하지 못하면
+**무한 반복하지 말고** 최선의 결과물을 내되, 미해결 검증 항목을 결과의 "확인 요망"에 명시한다.
 </phase>
 
 <phase n="7" name="결과 반환">
@@ -80,7 +84,7 @@ reference를 그대로 재사용해 **이 컨텍스트 안에서 단계별로** 
 2. **최종 결과물** — 모든 단계를 거친 글.
 3. **단계별 요약 표** — 단계 / 실행(✅·skip+사유) / 주요 변경·탐지.
 4. **before → after 하이라이트 3~5건**.
-5. (있으면) **확인 요망** — 오역 의심·효력 문구 등.
+5. (있으면) **확인 요망** — 오역 의심·효력 문구·미해결 검증 항목 등.
    </outputFormat>
 
 <preservationRules>
@@ -93,7 +97,8 @@ restyle은 register(종결체·격식·톤)만 의도적으로 바꾸고 그 외
 | 사용자 신호 | 처리 |
 |---|---|
 | "특정 단계만 다시" | 해당 단계만 재실행(앞 단계 결과 유지) |
-| "번역투는 빼고" / "교정만" | 라우팅을 덮어써 지정 단계만 실행 |
+| "교정만" / "~ 단계만" (포함 지정) | 지정한 단계만 실행하고 나머지는 모두 skip |
+| "번역투는 빼고" / "~는 빼고" (제외 지정) | 지정 단계만 제외하고 나머지는 라우팅대로 실행 |
 | "강도 조정" | 강도를 바꿔 cleaner 단계(2~5)를 재실행 |
 | "이 문단만" | 지정 문단만 입력으로 삼아 Phase 0부터 |
 | "문체를 ~로 바꿔" | restyle(5단계)을 켜고 목표 문체로 재실행 |
