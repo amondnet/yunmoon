@@ -1,6 +1,6 @@
 {
   "name": "yoonmoon",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "한글 글다듬기·탐지 도구 모음 — 전과정 윤문 풀코스(polish-all), AI 글 윤문(humanize), AI 작성 판별(detect), 번역투 교정(translate-polish), 맞춤법·문법 교정(proofread), 문체·톤 변환(restyle). 내용은 보존하고 문체·리듬만 다듬으며, 10대 AI 티 분류와 한국 번역학·KatFishNet(ACL 2025) 근거를 공유한다.",
   "author": {
     "name": "Minsu Lee",
