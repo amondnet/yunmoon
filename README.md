@@ -137,6 +137,45 @@ ChatGPT·Claude·Gemini가 쓴 한국어 글에는 번역투, 피동 남용, 상
 종결체(하십시오체/해요체/한다체/반말)·매체(보도자료·이메일·CS·마케팅·SNS·학술 등)를 지정한다.
 종결 통일·높임 정합·어휘 격식·호칭까지 함께 조정한다.
 
+## 프로젝트별 단어 사전·규칙 (.yoonmoon.md)
+
+프로젝트 루트에 `.yoonmoon.md` 파일을 두면, 모든 스킬이 작업 시작 시 자동으로 읽어 **프로젝트별 단어
+사전과 규칙**을 반영한다. 브랜드명 보존, 조직 표준 표기 강제, 금칙어, 기본 옵션(장르·강도·종결체),
+카테고리 예외 등을 한 파일로 지정할 수 있다.
+
+```markdown
+# .yoonmoon.md
+
+## 보존 사전        # 절대 바꾸지 않을 표현 (브랜드·제품명·고유 용어)
+- 다이어트친구
+- DietFriends
+
+## 치환 사전        # 강제 치환 (A → B)
+유저 → 사용자
+어플 → 앱
+
+## 금칙어           # 우선 제거 대상
+- ~에 대해
+- ~을 통해
+
+## 기본 옵션        # 대화에서 직접 지정한 옵션이 항상 우선
+genre: 공식문서
+intensity: 기본
+register: 해요체
+
+## 예외 규칙        # 자유 산문 규칙
+- 카테고리 10(영어 인용)은 검사하지 않는다 — 기술 용어 원어 병기 허용.
+```
+
+- **탐색**: 현재 디렉터리에서 상위로 올라가며 가장 가까운 `.yoonmoon.md`를 찾는다(git 동작과 유사).
+  파일이 없으면 스킬 기본값으로 동작한다(기능은 전적으로 선택).
+- **우선순위**: 대화에서 직접 지정한 옵션 > `.yoonmoon.md` > 스킬 기본값. 사전 간에는 **보존 사전이 최우선**.
+- **스킬별**: humanize·translate-polish·restyle은 사전을 적용해 고쳐 쓰고, proofread는 보존·표준 표기에,
+  detect는 위양성 억제·장르 기본값에만 쓴다(글을 고치지 않음).
+
+복사용 템플릿은 [`.yoonmoon.example.md`](.yoonmoon.example.md), 전체 규약은
+[`skills/humanize/references/project-config.md`](skills/humanize/references/project-config.md) 참고.
+
 ## 10대 AI 티 카테고리
 
 | #   | 카테고리            | 대표 패턴                                          |
@@ -158,6 +197,7 @@ ChatGPT·Claude·Gemini가 쓴 한국어 글에는 번역투, 피동 남용, 상
 
 ```text
 yoonmoon/
+├── .yoonmoon.example.md     # 프로젝트별 설정 템플릿 (.yoonmoon.md로 복사해 사용)
 ├── .claude-plugin/
 │   ├── plugin.json          # 플러그인 매니페스트
 │   └── marketplace.json     # 마켓플레이스 등록
@@ -170,6 +210,7 @@ yoonmoon/
 │   │   ├── SKILL.md         # 오케스트레이터 (탐지·윤문·검증)
 │   │   └── references/
 │   │       ├── ai-tell-taxonomy.md    # 10대 AI 티 분류 (humanize·detect 공유)
+│   │       ├── project-config.md      # .yoonmoon.md 프로젝트 설정 규약 (전 스킬 공유)
 │   │       ├── rewriting-guide.md     # 윤문 원칙·순서·자체검증
 │   │       ├── examples.md            # 장르별 before/after
 │   │       └── katfishnet-research.md # 근거: 쉼표·POS 다양성 (KatFishNet, ACL 2025)
