@@ -13,7 +13,7 @@
     {
       "name": "yoonmoon",
       "source": "./",
-      "description": "한글 글다듬기 스킬 묶음 — 윤문(humanize)·탐지(detect)·번역투 교정(translate-polish)·맞춤법 교정(proofread)·문체 변환(restyle). 10대 AI 티 분류 + 한국 번역학·KatFishNet(ACL 2025) 근거.",
+      "description": "한글 글다듬기 스킬 묶음 — 전과정 풀코스(polish-all)·윤문(humanize)·탐지(detect)·번역투 교정(translate-polish)·맞춤법 교정(proofread)·문체 변환(restyle). 10대 AI 티 분류 + 한국 번역학·KatFishNet(ACL 2025) 근거.",
       "version": "0.1.0",
       "keywords": [
         "korean",
