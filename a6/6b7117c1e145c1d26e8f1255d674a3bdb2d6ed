@@ -1,0 +1,31 @@
+skills/polish-all/references/pipeline-guide.md
+  s_a78f577ae5495a::t_7e217b2b842427 1-17,26-33,41-79,88-90
+  s_a78f577ae5495a::t_765f55b65928b9 18-25,34-40,80-87
+skills/polish-all/SKILL.md
+  s_a78f577ae5495a::t_e3a8755ca0fa2e 1-106
+.claude-plugin/marketplace.json
+  s_a78f577ae5495a::t_ac420e023d63cb 16
+README.md
+  s_a78f577ae5495a::t_765f55b65928b9 10-17
+  s_a78f577ae5495a::t_621697654f1778 165-168
+  s_a78f577ae5495a::t_b83694906bb49b 8
+  s_a78f577ae5495a::t_9c2b81b2dd7f9d 42-59
+.claude-plugin/plugin.json
+  s_a78f577ae5495a::t_1f301991cbc1b1 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "a66b7117c1e145c1d26e8f1255d674a3bdb2d6ed",
+  "prompts": {},
+  "sessions": {
+    "s_a78f577ae5495a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "03e0c78d-9adb-473d-a136-153af786617a",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Minsu Lee <amond@amond.net>"
+    }
+  }
+}
