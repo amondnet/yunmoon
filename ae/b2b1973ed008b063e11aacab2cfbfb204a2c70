@@ -1,0 +1,22 @@
+skills/polish-all/SKILL.md
+  s_a78f577ae5495a::t_cae676f3bccc0b 9-14,18-26,39-41,45-46,50-51,55-57,61-62,67,69-70,87,100-101
+skills/polish-all/references/pipeline-guide.md
+  s_a78f577ae5495a::t_8424a7bbef9630 4-6
+  s_a78f577ae5495a::t_9292da9a78a9ca 19-26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "aeb2b1973ed008b063e11aacab2cfbfb204a2c70",
+  "prompts": {},
+  "sessions": {
+    "s_a78f577ae5495a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "03e0c78d-9adb-473d-a136-153af786617a",
+        "model": "unknown"
+      },
+      "human_author": "Minsu Lee <amond@amond.net>"
+    }
+  }
+}
