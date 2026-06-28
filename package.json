@@ -1,7 +1,7 @@
 {
   "name": "yoonmoon",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "packageManager": "bun@1.3.14",
   "description": "한글 AI 글 윤문·탐지 Claude Code 플러그인 — 개발 도구(린트·포맷) 설정",
