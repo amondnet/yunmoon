@@ -1,0 +1,23 @@
+.claude-plugin/marketplace.json
+  s_a78f577ae5495a::t_49bcd7e5e6d7e6 9,17
+.claude-plugin/plugin.json
+  s_a78f577ae5495a::t_744868650f8eeb 3
+package.json
+  s_a78f577ae5495a::t_61f1afe25b74b5 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.3",
+  "base_commit_sha": "8b7ead6136276d5fc3d902b07f261aeb22af9ed7",
+  "prompts": {},
+  "sessions": {
+    "s_a78f577ae5495a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "03e0c78d-9adb-473d-a136-153af786617a",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Minsu Lee <amond@amond.net>"
+    }
+  }
+}
